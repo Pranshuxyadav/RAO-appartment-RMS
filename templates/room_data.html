@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Data</title>
+</head>
+<body>
+    <h1>Details for Room {{ room_no }}</h1>
+    {% if tenant %}
+    <table border="1">
+        <tr>
+            <th>Room No.</th>
+            <th>Room Type</th>
+            <th>Tenant Name</th>
+            <th>Mobile No.</th>
+            <th>Rent Type</th>
+            <th>Rent Amt</th>
+            <th>Electricity From</th>
+            <th>Electricity To</th>
+            <th>Electricity Reading</th>
+            <th>Electricity Amt</th>
+            <th>Water From</th>
+            <th>Water To</th>
+            <th>Water Reading</th>
+            <th>Water Amt</th>
+            <th>Balance</th>
+            <th>Previous Balance</th>
+            <th>Total To Be Paid</th>
+            <th>Paid</th>
+        </tr>
+        <tr>
+            <td>{{ tenant['Room No.'] }}</td>
+            <td>{{ tenant['Room Type'] }}</td>
+            <td>{{ tenant['Tenant Name'] }}</td>
+            <td>{{ tenant['Mobile No.'] }}</td>
+            <td>{{ tenant['Rent Type'] }}</td>
+            <td>{{ tenant['Rent Amt'] }}</td>
+            <td>{{ tenant['Electricity From'] }}</td>
+            <td>{{ tenant['Electricity To'] }}</td>
+            <td>{{ tenant['Electricity Reading'] }}</td>
+            <td>{{ tenant['Electricity Amt'] }}</td>
+            <td>{{ tenant['Water From'] }}</td>
+            <td>{{ tenant['Water To'] }}</td>
+            <td>{{ tenant['Water Reading'] }}</td>
+            <td>{{ tenant['Water Amt'] }}</td>
+            <td>{{ tenant['Balance'] }}</td>
+            <td>{{ tenant['Previous Balance'] }}</td>
+            <td>{{ tenant['Total To Be Paid'] }}</td>
+            <td>{{ tenant['Paid'] }}</td>
+        </tr>
+    </table>
+    {% else %}
+        <p>No data found for Room No. {{ room_no }}.</p>
+    {% endif %}
+</body>
+</html>
