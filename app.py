@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 # Function to load data from Excel
 def load_excel_data():
-    excel_path = r"C:\Users\prans\OneDrive\Desktop\rao apartment RMS\static\Book1 example.xlsx"  # Path to Excel
+    excel_path = 'static/Book1 exam.xlsx'  # Make sure the file is uploaded to this path
     df = pd.read_excel(excel_path)
     data = df.to_dict(orient='records')
     return data
