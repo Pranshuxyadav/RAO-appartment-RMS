@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template
 import pandas as pd
+import os  # Import os to access environment variables
 
 app = Flask(__name__)
 
@@ -7,7 +8,7 @@ app = Flask(__name__)
 def load_data():
     try:
         # Ensure the Excel file path is correct
-        df = pd.read_excel('room_data.xlsx.xlsx')  # Correct the file path if necessary
+        df = pd.read_excel('room_data.xlsx')  # Corrected file path
         return df
     except FileNotFoundError:
         return None
@@ -15,7 +16,6 @@ def load_data():
 @app.route('/')
 def index():
     return render_template('index.html')
-
 
 @app.route('/otp', methods=['GET'])
 def otp_login():
@@ -47,6 +47,8 @@ def otp_login():
             return "Invalid OTP. Please try again.", 400
     return "OTP is required", 400
 
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Get the PORT environment variable from Render or use 5000 by default
+    port = int(os.environ.get('PORT', 5000))
+    # Run the app on 0.0.0.0 to listen to all incoming traffic
+    app.run(host='0.0.0.0', port=port, debug=True)
