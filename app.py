@@ -8,7 +8,7 @@ app = Flask(__name__)
 def load_data():
     try:
         # Ensure the Excel file path is correct
-        df = pd.read_excel('room_data.xlsx')  # Corrected file path
+        df = pd.read_excel('room_data.xlsx.xlsx')  # Corrected file path
         return df
     except FileNotFoundError:
         return None
