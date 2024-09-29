@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="static\images.png"> 
     <link rel="stylesheet" href="static/style.css">
-    <title>OTP Login</title>
+    <title>RAO APPARTMENT Login</title>
 </head>
 <body>
-    <div class="login">
-        <h1>RAO APPARTMENT</h1>
-    <h2>Enter The Code Provided</h2>
-    <form action="/otp" method="GET">
-        <label for="otp">CODE:</label>
-        <input type="text" id="otp" name="otp" required>
-        <button type="submit">Submit</button>
-    </form> 
-    </div> 
+    <div class="login-container">
+        <div class="login-box">
+            <h1>RAO APPARTMENT</h1>
+            <h2>Enter The Code Provided</h2>
+            <form action="/otp" method="GET">
+                <input type="text" id="otp" name="otp" placeholder="Enter your code" required>
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

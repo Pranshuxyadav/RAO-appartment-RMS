@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="static/images.png">      
     <link rel="stylesheet" href="static/style.css">
-    <title>Room Data</title>
+    <title>Room Details</title>
 </head>
 <body>
-    <h1>Details for  {{ room_no }}</h1>
+    <h1>Details for {{ room_no }}</h1>
     {% if tenant %}
     <table border="1">
         <tr>
@@ -21,7 +22,7 @@
         </tr>
         <tr>
             <td data-label="Room No.">{{ tenant['Room No.'] }}</td>
-            <td data-label="Month">{{ tenant['Month'] }}</td>
+            <td data-label="Month" id="monthDisplay">{{ tenant['Month'] }}</td>
             <td data-label="Rent">{{ tenant['Rent'] }}</td>
             <td data-label="Parking">{{ tenant['Parking'] }}</td>
             <td data-label="Water">{{ tenant['Water'] }}</td>
@@ -32,5 +33,26 @@
     {% else %}
         <p>No data found for Room No. {{ room_no }}.</p>
     {% endif %}
+
+    <!-- Add the script at the bottom before the closing body tag -->
+    <script>
+        // Function to convert a numeric month to a month name
+        function getMonthName(monthNumber) {
+            const months = [
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+            return months[monthNumber - 1]; // monthNumber is 1-based, so subtract 1 for 0-based index
+        }
+
+        // Assuming you get the month as part of a full date (e.g., "2024-09-24 00:00:00")
+        let fullDate = "{{ tenant['Month'] }}"; // Extracted from the backend, formatted as YYYY-MM-DD
+        let numericMonth = parseInt(fullDate.split('-')[1], 10); // Get the month part (e.g., "09" → 9)
+        let monthName = getMonthName(numericMonth);
+
+        // Update the displayed month to show its name instead of the number
+        document.getElementById('monthDisplay').innerText = monthName + ' ' + fullDate.split('-')[0]; // Add year back
+    </script>
+
 </body>
 </html>
