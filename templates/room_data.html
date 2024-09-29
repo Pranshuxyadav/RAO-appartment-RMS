@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Room Data</title>
+</head>
+<body>
+    <h1>Details for  {{ room_no }}</h1>
+    {% if tenant %}
+    <table border="1">
+        <tr>
+            <th>Room No.</th>
+            <th>Month</th>
+            <th>Rent</th>
+            <th>Parking</th>
+            <th>Water</th>
+            <th>Balance</th>
+            <th>Total Rent Due</th>
+        </tr>
+        <tr>
+            <td data-label="Room No.">{{ tenant['Room No.'] }}</td>
+            <td data-label="Month">{{ tenant['Month'] }}</td>
+            <td data-label="Rent">{{ tenant['Rent'] }}</td>
+            <td data-label="Parking">{{ tenant['Parking'] }}</td>
+            <td data-label="Water">{{ tenant['Water'] }}</td>
+            <td data-label="Balance">{{ tenant['Balance'] }}</td>
+            <td data-label="Total Rent Due">{{ tenant['Total Rent Due'] }}</td>
+        </tr>
+    </table>
+    {% else %}
+        <p>No data found for Room No. {{ room_no }}.</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+/* Container to center the form */
+form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 40px;
+    color: #4CAF50;
+}
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #4CAF50;
+}
+
+/* Input and Button styling */
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+    form {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+
+/*---------------------------------------page 2 -----------------------*/
+
+/* Global styles */
+
+h1 {
+    text-align: center;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Default table layout for larger screens */
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    text-align: left;
+}
+
+/* Responsive layout for smaller screens (stacked columns) */
+@media (max-width: 768px) {
+    table, tr, th, td {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Hide the original table headers */
+    th {
+        display: none;
+    }
+
+    /* Each row becomes a block with labels above the data */
+    tr {
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        padding: 10px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Add labels (mimicking table headers) before each data field */
+    td::before {
+        content: attr(data-label); /* Display data-label as the header */
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+        color: #4CAF50;
+    }
+
+    /* Adjust cell padding and font size */
+    td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Different background colors for alternating rows */
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+}
+
+/* Message for no data found */
+p {
+    text-align: center;
+    color: #ff0000;
+    font-size: 18px;
+}
+
+
+/*============carasoul==========================*/
+
