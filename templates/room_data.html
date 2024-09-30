@@ -17,8 +17,9 @@
             <th>Rent</th>
             <th>Parking</th>
             <th>Water</th>
+            <th>Total Rent</th>
             <th>Balance</th>
-            <th>Total Rent Due</th>
+            <th>Current Due</th>
         </tr>
         <tr>
             <td data-label="Room No.">{{ tenant['Room No.'] }}</td>
@@ -26,8 +27,9 @@
             <td data-label="Rent">{{ tenant['Rent'] }}</td>
             <td data-label="Parking">{{ tenant['Parking'] }}</td>
             <td data-label="Water">{{ tenant['Water'] }}</td>
+            <td data-label="Total Rent">{{ tenant['Total Rent'] }}</td>
             <td data-label="Balance">{{ tenant['Balance'] }}</td>
-            <td data-label="Total Rent Due">{{ tenant['Total Rent Due'] }}</td>
+            <td data-label="Current Due">{{ tenant['Current Due'] }}</td>
         </tr>
     </table>
     {% else %}
