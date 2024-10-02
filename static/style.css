@@ -117,6 +117,7 @@ table {
     background-color: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    padding-left: 25%;
 }
 
 /* Default table layout for larger screens */
