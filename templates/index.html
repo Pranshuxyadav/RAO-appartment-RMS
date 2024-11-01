@@ -8,15 +8,22 @@
     <title>RAO APPARTMENT Login</title>
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-box">
-            <h1>RAO APPARTMENT</h1>
-            <h2>Enter The Code Provided</h2>
-            <form action="/otp" method="GET">
-                <input type="text" id="otp" name="otp" placeholder="Enter your code" required>
-                <button type="submit" class="submit-button">Submit</button>
-            </form>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Rao Appartment</div>
+            <div class="tagline">Rajokri, New Delhi</div>
         </div>
+        <div class="login-container">
+            <div class="login-box">
+                <h1>Resident Portal</h1>
+                <h2>Enter Your Unique Access Code</h2>
+                <form action="/otp" method="GET">
+                    <input type="text" id="otp" name="otp" placeholder="Enter your access code" required>
+                    <button type="submit" class="submit-button">Access Portal</button>
+                </form>
+            </div>
+        </div>
+        
     </div>
 </body>
 </html>
